@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
 
 function App() {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  }; 
+
+  const teste =() => {
+      console.log(checked);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <div>
+      <input type="checkbox"  checked={checked}
+          onChange={handleChange} />
+    </div>
+   <button onClick={teste}></button>
     </div>
   );
 }
